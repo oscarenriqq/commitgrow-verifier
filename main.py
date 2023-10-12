@@ -10,6 +10,7 @@ from services.email import send_email
 load_dotenv() 
 
 def job():
+    print("Iniciando verificación...")
     
     contracts = get_active_contracts()
     todoist_tasks = get_todoist_tasks()

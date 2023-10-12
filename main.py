@@ -53,25 +53,25 @@ def job():
                     
 # obtenemos todos los contratos          
 def get_active_contracts():
-    response = requests.get("http://localhost:8000/api/active-contracts")
+    response = requests.get("https://commitgrow-production.up.railway.app/api/active-contracts")
     return response.json()         
           
 #obtenemos las tareas de todoist con el label commit-grow          
 def get_todoist_tasks():
-    response = requests.get("http://localhost:8000/api/todoist-tasks")
+    response = requests.get("https://commitgrow-production.up.railway.app/api/todoist-tasks")
     return response.json()
 
 #obtenemos una tarea de todoist por su id
 def get_todoist_task(id: str):
-    response = requests.get(f"http://localhost:8000/api/todoist-task/{id}")
+    response = requests.get(f"https://commitgrow-production.up.railway.app/api/todoist-task/{id}")
     return response.json()
 
 def register_penalty(contract_id, penalty):
-    response = requests.post("http://localhost:8000/api/penalty", json={ "id": contract_id, "penalty": penalty }, headers={ "Content-Type": "application/json" })
+    response = requests.post("https://commitgrow-production.up.railway.app/api/penalty", json={ "id": contract_id, "penalty": penalty }, headers={ "Content-Type": "application/json" })
     return response.json()
     
 def register_streak(contract_id):
-    response = requests.post("http://localhost:8000/api/streak", json={ "id": contract_id })
+    response = requests.post("https://commitgrow-production.up.railway.app/api/streak", json={ "id": contract_id })
     return response.json()
 
 if __name__ == "__main__":

@@ -75,6 +75,7 @@ def register_streak(contract_id):
     return response.json()
 
 if __name__ == "__main__":
+    print("Iniciando el programa")
     schedule.every().day.at("23:59").do(job)
     
     while True:

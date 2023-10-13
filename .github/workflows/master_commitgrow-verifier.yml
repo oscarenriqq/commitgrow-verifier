@@ -65,6 +65,6 @@ jobs:
           app-name: 'commitgrow-verifier'
           slot-name: 'Production'
           package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_A5D9EDCFA7E042ED8B36006BAE5FDCD1 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_3A906C6E006F4B1592FFF7E59F884665 }}
           scm-do-build-during-deployment: true
           enable-oryx-build: true

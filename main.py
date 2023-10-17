@@ -3,9 +3,10 @@ import time
 import requests
 import schedule
 import pytz
+from pytz import timezone
 
 from dotenv import load_dotenv
-from datetime import datetime, timezone
+from datetime import datetime
 
 from services.email import send_email
 
@@ -87,14 +88,9 @@ def register_streak(contract_id):
 if __name__ == "__main__":
     print("Iniciando el programa")
     
-    # Obtener la hora actual en UTC
-    now = datetime.utcnow()
-    
-    # Convertir la hora a la zona horaria UTC-5
-    utc_5 = timezone.utc_offset(-3600)
-    
-    print(now.astimezone(utc_5))
-    print(now.time())
+    america_bogota = timezone('America/Bogota')
+    utc_dt = america_bogota.localize(datetime.now())
+    print(utc_dt.time())
     
     schedule.every().day.at("23:59").do(job)
     

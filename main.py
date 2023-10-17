@@ -5,7 +5,7 @@ import schedule
 import pytz
 
 from dotenv import load_dotenv
-from datetime import datetime
+from datetime import datetime, timezone
 
 from services.email import send_email
 
@@ -91,7 +91,7 @@ if __name__ == "__main__":
     now = datetime.utcnow()
     
     # Convertir la hora a la zona horaria UTC-5
-    utc_5 = datetime.timezone.utc_offset(-3600)
+    utc_5 = timezone.utc_offset(-3600)
     
     print(now.astimezone(utc_5))
     print(now.time())

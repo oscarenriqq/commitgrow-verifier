@@ -94,7 +94,7 @@ if __name__ == "__main__":
     
     print(f"America/Bogota: {utc_dt.astimezone(america_bogota)}")
     
-    schedule.every().day.at("23:59").do(job)
+    schedule.every().day.at("10:02", "America/Bogota").do(job)
     
     while True:
         schedule.run_pending()

@@ -87,11 +87,14 @@ def register_streak(contract_id):
 if __name__ == "__main__":
     print("Iniciando el programa")
     
-    print(datetime.now())
+    # Obtener la hora actual en UTC
+    now = datetime.utcnow()
     
-    os.environ["TZ"] = "America/Bogota"
+    # Convertir la hora a la zona horaria UTC-5
+    utc_5 = datetime.timezone.utc_offset(-3600)
     
-    print(f"After update: {datetime.now()}")
+    print(now.astimezone(utc_5))
+    print(now.time())
     
     schedule.every().day.at("23:59").do(job)
     

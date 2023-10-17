@@ -89,7 +89,7 @@ if __name__ == "__main__":
     print("Iniciando el programa")
 
     sch = schedule.every().day.at("00:01", "America/Bogota").do(job)
-    print("Próxima ejecución: {}".format(sch.next_run)) 
+    print("Próxima ejecución: {}".format(sch.next_run.astimezone(pytz.timezone("America/Bogota")).strftime("%d-%m-%Y %H:%M:%S"))) 
     
     while True:
         schedule.run_pending()
